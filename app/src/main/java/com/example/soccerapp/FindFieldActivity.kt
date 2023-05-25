@@ -9,23 +9,30 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.maps.android.compose.MarkerState
+import com.google.maps.android.compose.rememberCameraPositionState
+import java.lang.reflect.Modifier
 
-internal class FindFieldActivity : AppCompatActivity(), OnMapReadyCallback {
+class FindFieldActivity : AppCompatActivity(), OnMapReadyCallback {
 
-
+    lateinit var mMap: GoogleMap
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.find_field_activity)
 
-        val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as? SupportMapFragment
-        mapFragment?.getMapAsync(this)
+        val mapFragment = supportFragmentManager
+            .findFragmentById(R.id.map) as SupportMapFragment
+        mapFragment.getMapAsync(this)
     }
 
-    override fun onMapReady (googleMap: GoogleMap){
-        val sydney = LatLng(-34.0, 151.0)
-        googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+    override fun onMapReady(googleMap: GoogleMap) {
+        mMap = googleMap
+        val singapore = LatLng(1.35, 103.07)
+        mMap.addMarker(MarkerOptions().position(singapore).title("Marker in Singapore"))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(singapore))
     }
+
 }
