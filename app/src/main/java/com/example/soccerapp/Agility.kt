@@ -1,6 +1,7 @@
 package com.example.soccerapp
 
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.FirebaseDatabase
@@ -9,6 +10,7 @@ class Agility : AppCompatActivity() {
 
 
     lateinit var agility_description: TextView
+    lateinit var back_arrow: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +30,11 @@ class Agility : AppCompatActivity() {
 
         }.addOnFailureListener {
             println("Failed to read value.")
+        }
+
+        back_arrow = findViewById(R.id.back_arrow)
+        back_arrow.setOnClickListener {
+            finish()
         }
     }
 

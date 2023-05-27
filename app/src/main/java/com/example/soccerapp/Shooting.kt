@@ -1,6 +1,7 @@
 package com.example.soccerapp
 
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.FirebaseDatabase
@@ -8,10 +9,16 @@ import com.google.firebase.database.FirebaseDatabase
 class Shooting : AppCompatActivity() {
 
     lateinit var shooting_description: TextView
+    lateinit var back_arrow: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.shooting_activity)
+
+        back_arrow = findViewById(R.id.back_arrow)
+        back_arrow.setOnClickListener {
+            finish()
+        }
 
         val database = FirebaseDatabase.getInstance()
         val postsRef = database.getReference("shooting_desc")
@@ -28,6 +35,7 @@ class Shooting : AppCompatActivity() {
         }.addOnFailureListener {
             println("Failed to read value.")
         }
+
     }
 }
 
