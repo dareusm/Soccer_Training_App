@@ -9,15 +9,20 @@ import com.google.firebase.database.FirebaseDatabase
 class Agility : AppCompatActivity() {
 
 
-    lateinit var agility_description: TextView
-    lateinit var back_arrow: ImageView
+    private lateinit var agility_description: TextView
+    private lateinit var back_arrow: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.agility_activity)
 
+        back_arrow = findViewById(R.id.back_arrow)
+        back_arrow.setOnClickListener {
+            finish()
+        }
+
         val database = FirebaseDatabase.getInstance()
-        val postsRef = database.getReference("shooting_desc")
+        val postsRef = database.getReference("agility_desc")
 
         agility_description = findViewById(R.id.agilityDescription)
 
@@ -31,13 +36,6 @@ class Agility : AppCompatActivity() {
         }.addOnFailureListener {
             println("Failed to read value.")
         }
-
-        back_arrow = findViewById(R.id.back_arrow)
-        back_arrow.setOnClickListener {
-            finish()
-        }
     }
-
-
 }
 

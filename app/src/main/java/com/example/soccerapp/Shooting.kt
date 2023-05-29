@@ -8,8 +8,8 @@ import com.google.firebase.database.FirebaseDatabase
 
 class Shooting : AppCompatActivity() {
 
-    lateinit var shooting_description: TextView
-    lateinit var back_arrow: ImageView
+    private lateinit var shooting_description: TextView
+    private lateinit var back_arrow: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
