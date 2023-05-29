@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var title: TextView
     lateinit var firstName: String
     lateinit var profileIcon: ImageView
-    lateinit var backArrow: ImageView
     var db = Firebase.firestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,11 +44,6 @@ class MainActivity : AppCompatActivity() {
         findFieldBtn = findViewById(R.id.find_field_btn)
         reqSessionBtn = findViewById(R.id.request_session_btn)
         profileIcon = findViewById(R.id.profile_Icon)
-        backArrow = findViewById(R.id.back_arrow)
-
-        backArrow.setOnClickListener {
-            finish()
-        }
 
         profileIcon.setOnClickListener {
             val intent = Intent(this, Profile::class.java)
