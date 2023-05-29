@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_image"
+    >
+
+    <GridLayout xmlns="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        layout_height="100dp"
+        layout_width="match_parent"
+        android:id="@+id/GridLayout">
+
+
+        <ImageView
+            android:id="@+id/back_arrow"
+            android:layout_height="30dp"
+            android:layout_width="40dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/back_arrow"
+            android:onClick="goToProfile"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:contentDescription="Profile Icon"
+            />
+
+        <TextView
+            android:id="@+id/welcome_title"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:text="Find a Field"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="2dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_marginLeft="30dp"
+            />
+
+        <ImageView
+            android:id="@+id/profile_Icon"
+            android:layout_height="50dp"
+            android:layout_width="50dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/profile_icon"
+            android:onClick="goToProfile"
+            android:layout_column="2"
+            android:layout_row="0"
+            android:contentDescription="Profile Icon"
+            />
+
+    </GridLayout>
+
+    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="4"
+        android:useDefaultMargins="true"
+        android:alignmentMode="alignMargins"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="25dp"
+        >
+
+        <Button
+            android:id="@+id/dribbling_button"
+            android:layout_width="175dp"
+            android:layout_height="40dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:text="Dribbling"
+            android:layout_gravity="fill"
+            android:background="@drawable/background_image"
+
+            />
+
+        <Button
+            android:id="@+id/passing_button"
+            android:layout_width="175dp"
+            android:layout_height="40dp"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:text="Passing"
+            android:layout_gravity="fill"
+            android:background="@drawable/passing"
+            />
+
+        <Button
+            android:id="@+id/shooting_button"
+            android:layout_width="175dp"
+            android:layout_height="10dp"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:text="Shooting"
+            android:layout_gravity="fill"
+            android:background="@drawable/shooting"
+            />
+
+        <Button
+            android:id="@+id/defending_button"
+            android:layout_width="175dp"
+            android:layout_height="150dp"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:text="Defending"
+            android:layout_gravity="fill"
+            android:background="@drawable/defense"
+            />
+
+        <Button
+            android:id="@+id/strength_button"
+            android:layout_width="175dp"
+            android:layout_height="150dp"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_gravity="fill"
+            android:text="Strength Training" />
+
+        <Button
+            android:id="@+id/agility_button"
+            android:layout_width="175dp"
+            android:layout_height="150dp"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:layout_gravity="fill"
+            android:text="Agility and Conditioning"
+            android:background="@drawable/agility"/>
+
+
+    </GridLayout>
+        <!--android:layout_below="@id/gridLayout"-->
+
+
+
+</RelativeLayout>
