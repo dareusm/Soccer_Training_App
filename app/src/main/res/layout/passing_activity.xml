@@ -26,14 +26,14 @@
                 android:onClick="goToProfile"
                 android:layout_column="0"
                 android:layout_row="0"
-                android:contentDescription="Profile Icon"
+                android:contentDescription="Back Arrow"
                 />
 
             <TextView
                 android:id="@+id/welcome_title"
                 android:layout_width="250dp"
                 android:layout_height="100dp"
-                android:text="Find a Field"
+                android:text="Passing"
                 android:textSize="30dp"
                 android:gravity="center"
                 android:textColor="#000000"
